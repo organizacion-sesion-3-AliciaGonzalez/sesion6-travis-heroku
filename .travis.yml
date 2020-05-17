@@ -1,0 +1,15 @@
+language: php
+php:
+  - 7.3
+services:
+  - mysql
+before_script:
+  - composer install
+script: ./vendor/bin/phpunit ./tests
+deploy:
+  provider: heroku
+  app: sesion6-travis-heroku-alicia
+  on: master
+  skip_cleanup: true
+  api_key:
+    secure: LmGdYI9LYJmzKU3Bb3z/JWNczzMDtDwR8gRYn5ljsOPf9kHjr+fy0aDUK1vUqTTaX8eVQAkkbs7stlP4wZ+yZTOJruaRnT4SmETEy5dTW5bKDUij1fi/5oHWYsHgt2MA7cc7K5852GqKrur2ayekcnphQBfg8oEW+Xifrx9qlgKjqLhMg6hzVUe/9CkoTN51FrCdQxBcse7CJM34G+MVYKoVe9rp4qEj6JD5JYLZXw8lIw9yvuWmC4AJoCge9Ic0/OIUY+OgFGk9/D8hpv5LdyQWmTEEUZzb3NFlbZkhCHGQeX6q+ypJSQl3L4fzBVKvPjl+WiVKJGk/ms2XWAo5CL5CyFw/vEWHcTu/ASZ8hbvbOVfI5nfIeBckzo1USKyoujCapEQDNujZy1qBU5BWM4QObuo3bOiFPxn0MWyZ1PITvhNec3dFevMOxwNiCh/u5Dp0Vl3PMCDk2bTJGaslqhutmdFupYwxLoXIVK6X87ryD3lR011sZ115AcRTryp90u1RPfvFCgUyfh5GXYpX3BRdOAws7iofrNEj6OuD7UJ1u7Bjmnvt7TPQbSTcNQ7kO9Wg9n74U5ASQk3sb5OTf340/fZzdMQK8SqWJ0Dvgkss8rRfg5MXN5Dsd/dmNB5W4v6K6UsV7wgyhU5dRZVe3ApFJhhatbAYEkyM7Pud8bE=
